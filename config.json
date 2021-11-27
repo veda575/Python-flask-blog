@@ -1,0 +1,11 @@
+{
+  "params":
+  {
+    "localserver":"mysql://root:@localhost/vihariwedding",
+    "fb_url":"https://fabook.com",
+    "title": "harika veda wedding",
+    "admin_user":"harry@xyz.com",
+    "admin_password": "subscribenow"
+
+  }
+}

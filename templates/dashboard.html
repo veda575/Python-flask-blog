@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{%block body%}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('  {{ url_for('static', filename = 'assets/img/home-bg.jpg') }}   ')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Vihaari wedding</h1>
+                            <span class="subheading">Veda and harika</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+       
+                   <h1>You Are signed In</h1>
+
+
+<hr>
+<a class="btn btn-primary" href="/logout" role="button">Logout</a>
+
+<hr>
+<a class="btn btn-primary" href="/add-post" role="button">Add-post</a>
+<hr>
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlFile1"></label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    <a class="btn btn-primary" href="/uploader" role="button">Submit</a>
+  </div>
+</form>
+
+<hr>
+<table class="table">
+    <thead>
+      <tr>
+        <th>sno</th>
+        <th>title</th>
+        <th>owner</th>
+        <th>Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+    {%for post in post%}
+      <tr>
+        <td>{{post.sno}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.owner}}</td>
+        <td>{{post.date}}</td>
+        <td><a href="/edit/{{post.sno}}"><button>Edit</button></a></td>
+        <td><a href="/delete/{{post.sno}}"><button>Delete</button></a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+    
+                    <!-- Pager-->
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                </div>
+            </div>
+        </div>
+        {%endblock%}
